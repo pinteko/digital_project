@@ -1,6 +1,7 @@
 package com.korsuk.digital_project.controllers;
 
 import com.korsuk.digital_project.dtos.StudentDto;
+import com.korsuk.digital_project.dtos.StudentToSave;
 import com.korsuk.digital_project.services.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +27,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public StudentDto createStudent(@RequestBody StudentDto studentDto) {
-       return studentService.saveStudent(studentDto);
+    public StudentDto createStudent(@RequestBody StudentToSave studentToSave) {
+       return studentService.saveStudent(studentToSave);
     }
 
     @PutMapping

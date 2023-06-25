@@ -1,6 +1,7 @@
 package com.korsuk.digital_project.services;
 
 import com.korsuk.digital_project.dtos.GroupDto;
+import com.korsuk.digital_project.dtos.GroupToSave;
 import com.korsuk.digital_project.entities.Group;
 import com.korsuk.digital_project.exceptions.ExistEntityException;
 import com.korsuk.digital_project.exceptions.ResourceNotFoundException;
@@ -22,7 +23,7 @@ public class GroupService {
     }
 
     public Group getGroupByTitle(String title) {
-        return groupRepository.findByTitle(title).orElseThrow(() -> new ResourceNotFoundException("Group not found"));
+        return groupRepository.findByTitle(title);
     }
 
     public List<Group> getAllGroups() {
@@ -36,12 +37,12 @@ public class GroupService {
         return groupRepository.saveAndFlush(groupToUpdate);
     }
 
-    public Group saveGroup(GroupDto groupDto) {
-        if (groupRepository.existsByTitle(groupDto.getTitle()))
+    public Group saveGroup(GroupToSave groupToSave) {
+        if (groupRepository.existsByTitle(groupToSave.getTitle()))
             throw new ExistEntityException("Group already exist");
         else {
             Group group = new Group();
-            group.setTitle(groupDto.getTitle());
+            group.setTitle(groupToSave.getTitle());
             return groupRepository.saveAndFlush(group);
         }
     }

@@ -3,6 +3,7 @@ package com.korsuk.digital_project.services;
 import com.korsuk.digital_project.converters.GroupConverter;
 import com.korsuk.digital_project.converters.StudentConverter;
 import com.korsuk.digital_project.dtos.StudentDto;
+import com.korsuk.digital_project.dtos.StudentToSave;
 import com.korsuk.digital_project.entities.Student;
 import com.korsuk.digital_project.exceptions.ExistEntityException;
 import com.korsuk.digital_project.exceptions.ResourceNotFoundException;
@@ -41,7 +42,7 @@ public class StudentService {
 
 
     @Transactional
-    public StudentDto saveStudent (StudentDto studentDto) {
+    public StudentDto saveStudent (StudentToSave studentDto) {
         if (repository.existsByName(studentDto.getName()))
             throw new ExistEntityException("Student already exist");
         else {

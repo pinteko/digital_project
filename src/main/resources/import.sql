@@ -48,8 +48,8 @@ insert into novels values           ('Invisible Monsters', 1, 5.78, 12.45),
                                     ('The Thanatonauts', 4, 4.52, 8.44),
                                     ('The Three Musketeerss', 4, 5.59, 12.01);
 
-insert into groups values           ('English'),
-                                    ('Russian');
+insert into groups values           ('spirits'),
+                                    ('young');
 
 insert into students values         ('Bob', 21, 1),
                                     ('Bill', 20, 2),

@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface GroupRepository extends JpaRepository<Group, Long> {
 
     @Query("select g from Group g where g.title = ?1")
-    Optional<Group> findByTitle(String title);
+    Group findByTitle(String title);
 
     boolean existsByTitle(String title);
 }
