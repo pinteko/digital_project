@@ -31,9 +31,9 @@ public class GroupService {
     }
 
     @Transactional
-    public Group updateGroup(Group group) {
-        Group groupToUpdate = groupRepository.findById(group.getId()).orElseThrow(() -> new ResourceNotFoundException("Group not found"));
-        groupToUpdate.setTitle(group.getTitle());
+    public Group updateGroup(GroupDto groupDto) {
+        Group groupToUpdate = groupRepository.findById(groupDto.getId()).orElseThrow(() -> new ResourceNotFoundException("Group not found"));
+        groupToUpdate.setTitle(groupDto.getTitle());
         return groupRepository.saveAndFlush(groupToUpdate);
     }
 

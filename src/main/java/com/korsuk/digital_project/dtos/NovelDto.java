@@ -10,17 +10,11 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 public class NovelDto {
-
     private Long id;
-
     private String title;
-
     private AuthorDto author;
-
     private Double rating;
-
     private Double price;
-
     private Integer count;
 
     public NovelDto(Long id, String title, AuthorDto authorDto, Double rating, Double price) {

@@ -1,6 +1,5 @@
 package com.korsuk.digital_project.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

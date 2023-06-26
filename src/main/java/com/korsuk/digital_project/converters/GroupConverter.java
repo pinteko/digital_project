@@ -12,7 +12,6 @@ import java.util.Objects;
 @Component
 @RequiredArgsConstructor
 public class GroupConverter {
-
     private final GroupService groupService;
     public Group dtoToEntity(GroupToSave groupToSave) {
         Group returnGroup = groupService.getGroupByTitle(groupToSave.getTitle());

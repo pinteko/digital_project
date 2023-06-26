@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/students")
 public class StudentController {
-
     private final StudentService studentService;
 
     @GetMapping()
@@ -40,6 +39,4 @@ public class StudentController {
     public void deleteStudent(Long id) {
         studentService.deleteStudent(id);
     }
-
-
 }

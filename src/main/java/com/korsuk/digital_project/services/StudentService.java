@@ -8,7 +8,6 @@ import com.korsuk.digital_project.entities.Student;
 import com.korsuk.digital_project.exceptions.ExistEntityException;
 import com.korsuk.digital_project.exceptions.ResourceNotFoundException;
 import com.korsuk.digital_project.repositories.StudentRepository;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +38,6 @@ public class StudentService {
         Student student = repository.findStudentByName(name).orElseThrow(() -> new ResourceNotFoundException("Student not found"));
         return studentConverter.entityToDto(student);
     }
-
 
     @Transactional
     public StudentDto saveStudent (StudentToSave studentDto) {

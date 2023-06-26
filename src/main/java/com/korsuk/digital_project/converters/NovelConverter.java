@@ -8,9 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class NovelConverter {
-
     private final AuthorConverter authorConverter;
-
 
     public Novel dtoToEntity(NovelDto novelDto) {
         return new Novel(novelDto.getId(), novelDto.getTitle(), authorConverter.dtoToEntity(novelDto.getAuthor()),

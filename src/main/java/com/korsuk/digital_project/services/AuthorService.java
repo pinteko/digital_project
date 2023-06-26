@@ -1,7 +1,6 @@
 package com.korsuk.digital_project.services;
 
 import com.korsuk.digital_project.entities.Author;
-import com.korsuk.digital_project.exceptions.ExistEntityException;
 import com.korsuk.digital_project.exceptions.ResourceNotFoundException;
 import com.korsuk.digital_project.repositories.AuthorRepository;
 import com.korsuk.digital_project.repositories.specification.AuthorSpecification;

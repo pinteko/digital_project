@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/novels")
 public class NovelController {
-
     private final NovelService novelService;
-
-
 
     @GetMapping()
     public Page<NovelDto> getNovels(@RequestParam(name = "p", defaultValue = "1") Integer page,
@@ -26,9 +23,7 @@ public class NovelController {
                                     @RequestParam(name = "names", required = false ) String name,
                                     @RequestParam(name = "surname", required = false ) String surname) {
         if (page < 1) {page = 1;}
-
         return novelService.findNovels(page, minRating, maxRating, minPrice, maxPrice, titlePart, name, surname);
-
     }
 
     @GetMapping("/{id}")

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class StudentConverter {
-
     private final GroupConverter groupConverter;
 
     public Student dtoToEntity(StudentDto studentDto) {
